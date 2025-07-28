@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+*.spec
+
+# Virtual environments
+env/
+venv/
+ENV/
+env.bak/
+.venv/
+
+# Django-specific
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+# IDEs & editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment Variables and Secrets
+.env
+.env.*
+*.env
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+.nox/
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+
+# Migrations (optional if you regenerate)
+**/migrations/*.pyc
+**/migrations/__pycache__/

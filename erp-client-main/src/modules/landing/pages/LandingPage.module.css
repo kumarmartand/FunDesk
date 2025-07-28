@@ -1,0 +1,112 @@
+/* Header */
+.headerTitle {
+  margin-bottom: 20px;
+  font-size: 20px !important;
+}
+
+/* Metric Card Styling */
+.metricCard {
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.metricCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Content inside the Card */
+.cardContent {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Icon Wrapper */
+.iconWrapper {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* Metric Value */
+.metricValue {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+/* Metric Title */
+.metricTitle {
+  font-size: 14px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* ============================
+   Custom Icon Backgrounds
+   ============================ */
+.icon-blue {
+  background-color: rgb(26, 136, 187) !important; /* Cool Blue */
+}
+
+.icon-green {
+  background-color: rgb(102, 187, 106) !important; /* Balanced Green */
+}
+
+.icon-red {
+  background-color: rgb(239, 83, 80) !important; /* Alert Red */
+}
+
+.icon-purple {
+  background-color: rgb(149, 117, 205) !important; /* Calm Purple */
+}
+
+.icon-pink {
+  background-color: rgb(236, 64, 122) !important; /* Bold Pink */
+}
+
+.icon-teal {
+  background-color: rgb(38, 166, 154) !important; /* Strong Teal */
+}
+.icon-yellow {
+  background-color: rgb(255, 235, 59) !important; /* Bright Yellow */
+}
+
+
+/* ============================
+   Icon Colors (forced)
+   ============================ */
+.icon-blue .anticon > svg {
+  color: #1890ff !important;
+  fill: #1890ff !important;
+}
+
+.icon-green .anticon > svg {
+  color: #52c41a !important;
+  fill: #52c41a !important;
+}
+
+.icon-red .anticon > svg {
+  color: #fa541c !important;
+  fill: #fa541c !important;
+}
+
+.icon-purple .anticon > svg {
+  color: #722ed1 !important;
+  fill: #722ed1 !important;
+}
+
+.icon-pink .anticon > svg {
+  color: #eb2f96 !important;
+  fill: #eb2f96 !important;
+}
+
+.icon-teal .anticon > svg {
+  color: #13c2c2 !important;
+  fill: #13c2c2 !important;
+}

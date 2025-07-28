@@ -1,0 +1,540 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f5; /* Light background for better contrast */
+  color: #003366;
+  overflow-x:hidden
+}
+/* Base responsive breakpoints matching your theme */
+:root {
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1600px;
+}
+
+/* Smooth transitions for all layout changes */
+.ant-layout-sider,
+.ant-layout {
+  transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+
+/* Mobile-first responsive styles */
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .ant-layout-header {
+    padding: 0 8px;
+    height: 56px;
+  }
+
+  .ant-layout-content {
+    margin: 0;
+    padding: 4px;
+  }
+
+  .ant-typography {
+    font-size: 14px;
+  }
+
+  .ant-menu-item, .ant-menu-submenu-title {
+    height: 36px;
+    line-height: 36px;
+    margin: 2px 0;
+  }
+
+  /* Hide sidebar completely on mobile */
+  .ant-layout-sider {
+    display: none;
+  }
+
+  /* Full width layout on mobile */
+  .ant-layout {
+    margin-left: 0;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .ant-layout-header {
+    padding: 0 12px;
+    height: 60px;
+  }
+
+  .ant-layout-content {
+    margin: 0;
+    padding: 6px;
+  }
+
+  .ant-menu-item, .ant-menu-submenu-title {
+    height: 38px;
+    line-height: 38px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .ant-layout-header {
+    padding: 0 16px;
+    height: 64px;
+  }
+
+  .ant-layout-content {
+    margin: 0;
+    padding: 6px;
+  }
+
+  .ant-layout-sider {
+    width: 200px;
+  }
+
+  .ant-menu-item, .ant-menu-submenu-title {
+    height: 40px;
+    line-height: 40px;
+    margin: 3px 0;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .ant-layout-header {
+    padding: 0 24px;
+    height: 64px;
+  }
+
+  .ant-layout-content {
+    margin: 0;
+    padding: 8px;
+  }
+
+  .ant-layout-sider {
+    width: 220px;
+  }
+
+  .ant-menu-item, .ant-menu-submenu-title {
+    height: 40px;
+    line-height: 40px;
+    margin: 4px 0;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1599.98px) {
+  .ant-layout-header {
+    padding: 0 28px;
+    height: 68px;
+  }
+
+  .ant-layout-content {
+    margin: 0;
+    padding: 10px;
+  }
+
+  .ant-layout-sider {
+    width: 240px;
+  }
+
+  .ant-menu-item, .ant-menu-submenu-title {
+    height: 42px;
+    line-height: 42px;
+    margin: 4px 0;
+    font-size: 15px;
+  }
+}
+
+/* Extra extra large devices (TV screens, 1600px and up) */
+@media (min-width: 1600px) {
+  .ant-layout-header {
+    padding: 0 32px;
+    height: 80px;
+  }
+
+  .ant-layout-content {
+    margin: 0;
+    padding: 12px;
+  }
+
+  .ant-layout-sider {
+    width: 280px;
+  }
+
+  .ant-menu-item, .ant-menu-submenu-title {
+    height: 48px;
+    line-height: 48px;
+    margin: 6px 0;
+    font-size: 16px;
+    /* padding-left: 32px; */
+  }
+
+  .ant-typography h1 {
+    font-size: 36px;
+  }
+
+  .ant-typography h2 {
+    font-size: 30px;
+  }
+
+  .ant-typography h3 {
+    font-size: 24px;
+  }
+
+  .ant-typography h4 {
+    font-size: 20px;
+  }
+
+  .ant-typography h5 {
+    font-size: 18px;
+  }
+}
+
+/* Collapsed sidebar styles for different screen sizes */
+.ant-layout-sider-collapsed {
+  width: 80px;
+}
+
+@media (min-width: 1600px) {
+  .ant-layout-sider-collapsed {
+    width: 90px;
+  }
+}
+
+/* Custom scrollbar for sidebar */
+.ant-layout-sider {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.ant-layout-sider::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ant-layout-sider::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ant-layout-sider::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.ant-layout-sider::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Mobile drawer specific styles */
+.ant-drawer-body {
+  padding: 0;
+}
+
+.ant-drawer-header {
+  border-bottom: 1px solid #e6f7ff;
+}
+
+/* Touch-friendly buttons on mobile */
+@media (max-width: 767.98px) {
+  .ant-btn, .ant-avatar {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* Smooth image transitions */
+.ant-image img {
+  transition: all 0.3s ease;
+}
+
+/* Header shadow enhancement */
+.ant-layout-header {
+  box-shadow: 0 2px 8px rgba(0, 33, 102, 0.1);
+  border-bottom: 1px solid rgba(0, 33, 102, 0.05);
+}
+
+/* Focus styles for accessibility */
+.ant-btn:focus,
+.ant-menu-item:focus,
+.ant-menu-submenu-title:focus {
+  outline: 0px solid #1677ff;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .ant-layout-header {
+    border-bottom: 2px solid #003366;
+  }
+
+  .ant-menu-dark {
+    border-right: 2px solid #001a33;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+  }
+}
+
+/* Print styles */
+@media print {
+  .ant-layout-sider,
+  .ant-layout-header {
+    display: none;
+  }
+
+  .ant-layout {
+    margin-left: 0;
+  }
+
+  .ant-layout-content {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Hide images */
+.hide_image {
+  display: none;
+}
+
+/* Menu item icon sizes */
+.ant-menu-item-icon {
+  font-size: 16px;
+}
+
+.ant-menu-title-content {
+  font-size: 14px;
+}
+
+.ant-menu-submenu-placement-rightTop{
+  padding: 0px !important;
+}
+
+/* Specific Hover Effects for Menu Items */
+.ant-menu-item:hover,
+.ant-menu-submenu:hover {
+  background-color: #333f54 !important;  /* Blue background on hover */
+  color: #fff !important;                /* White text on hover */
+}
+
+/* Menu Item Icon Color Change on Hover */
+.ant-menu-item:hover .ant-menu-item-icon,
+.ant-menu-submenu:hover .ant-menu-item-icon {
+  color: #fff !important;                /* White icon color on hover */
+}
+
+/* Selected Menu Item Styles */
+.ant-menu-item.ant-menu-item-selected {
+  background-color: #333f54 !important;  /* Blue background for selected item */
+  color: #fff !important;                /* White text for selected item */
+}
+
+.ant-menu-light .ant-menu-submenu-title{
+  background-color: #3f4d67 !important;  /* Blue background for selected item */
+  color: #fff !important; 
+}
+
+/* Selected Submenu Styles */
+.ant-menu-submenu.ant-menu-submenu-selected {
+  color: #fff !important;                /* White text for selected submenu */
+}
+
+/* Submenu Title Color Change on Hover */
+.ant-menu-submenu:hover .ant-menu-submenu-title .ant-menu-title-content {
+  color: #fff !important;                /* White text for submenu title on hover */
+}
+
+/* Submenu Title Color Change on Selected */
+.ant-menu-submenu-selected .ant-menu-submenu-title .ant-menu-title-content {
+  color: #fff !important;                /* White text for selected submenu title */
+}
+
+/* Arrow Color Change on Selected Submenu */
+.ant-menu-submenu-selected .ant-menu-submenu-arrow {
+  color: #fff !important;  /* White arrow for selected submenu */
+}
+
+/* Keep Default Background for Non-Hovered Menu Items */
+.ant-menu {
+  background-color: #3f4d67 !important;     /* Default background for the dropdown */
+}
+header, aside{
+  background-color: #3f4d67 !important; /* Dark background for sidebar */
+  color: #fff !important;                /* White text for sidebar */
+  border: 0px !important; /* No border for sidebar */
+}
+header{
+  height: 58px !important; /* Fixed height for header */
+}
+/* 1) Default: All icons white */
+.anticon svg {
+  color: #fff !important;
+}
+
+/* 2) Override: Only the 'model' icon dark */
+.anticon svg[data-icon="down"],
+.anticon svg[data-icon="close"] {
+  color: #333f54 !important;
+}
+
+.ant-avatar.ant-avatar-icon{
+  background-color: #333f54 !important; /* Primary color for avatar */
+  color: #fff !important;                /* White text for avatar */
+}
+/* Submenu Background Change Only on Hover */
+.ant-menu-submenu.ant-menu-submenu-inline:hover {
+  background-color: #333f54 !important;  /* Blue background on hover for submenu */
+  color: #fff !important;                /* White text color on hover for submenu */
+}
+
+.ant-menu-submenu.ant-menu-submenu-inline:hover .ant-menu-submenu-title {
+  background-color: #333f54 !important;  /* Change background for title on hover */
+  color: #fff !important;                /* Change text color for title on hover */
+}
+
+.ant-menu-light .ant-menu-submenu-selected>.ant-menu-submenu-title {
+  background-color: #3f4d67 !important;  /* Blue background for selected submenu */
+  color: #fff !important;                /* White text for selected submenu */
+}
+.ant-menu-light.ant-menu-root.ant-menu-inline{
+  border-inline-end: 0px !important; /* Light border for inline menu */
+  background-color: #3f4d67 !important; /* Dark background for inline menu */
+  padding: 0px !important; /* No padding for inline menu */
+}
+
+.ant-menu-light .ant-menu-item{
+  color: #fff !important; /* White text for menu items */
+}
+
+.ant-modal .ant-modal-content{
+  padding: 14px 14px !important;
+}
+
+/* Ensures the table content scrolls but the header stays fixed */
+.ant-table-content {
+  overflow: auto !important;
+  height: calc(96vh - 230px) !important; /* Adjust height as needed */
+  padding: 0px !important;
+}
+
+.ant-table-thead > tr > th {
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Ensure the header stays on top */
+  background-color: #3f4d67 !important;  /* Blue background for selected submenu */
+  color: #fff !important;                /* White text for selected submenu */
+  padding: 5px 15px !important;
+  line-height: 1.5 !important;
+  font-weight: 700 !important; /* Bold header text */ 
+}
+
+.ant-table-cell{
+  background-color: #fff !important;
+  color: #003366 !important; /* Text color for table cells */ 
+}
+
+.ant-table {
+  width: 100%; /* Ensure table takes full width */
+  table-layout: fixed;
+  overflow-x: hidden;
+  font-size: 11px;
+}
+.ant-table-tbody > tr > td {
+  padding: 1px 15px !important;
+  line-height: 1.5 !important;
+}
+
+.ant-table-thead{
+  position: sticky;
+  background: #fff;
+  top: 0px !important;
+  z-index: 2;
+}
+.ant-table-wrapper .ant-table.ant-table-bordered >.ant-table-container >.ant-table-content >table >thead>tr>th{
+  border-radius: 0px !important;
+}
+
+.ant-menu-light.ant-menu-inline .ant-menu-sub.ant-menu-inline{
+  background-color: #3f4d67 !important; /* Dark background for inline menu */
+  color: #fff !important; /* White text for inline menu */  
+}
+
+.ant-btn-color-primary{
+  background-color: #04a9f5 !important; /* Primary button color */
+  border-color: #04a9f5 !important; /* Border color for primary button */
+  color: #fff !important; /* Text color for primary button */
+  box-shadow: 0 5px 15px #0003; /* Remove box shadow */
+  font-weight: 600 !important; /* Semi-bold text for buttons */
+}
+.ant-switch.ant-switch-checked{
+  background-color: #04a9f5 !important; /* Primary color for checked switch */
+  border-color: #04a9f5 !important; /* Border color for checked switch */ 
+}
+/* 3D Button Style */
+.ant.btn {
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  font-weight: 800 !important; /* Bold text for buttons */
+}
+
+.ant.btn:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+.ant.btn:active {
+  transform: translateY(4px) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  background-color: #40a9ff !important;
+}
+
+.anticon-down{
+  display: none !important;
+}
+
+.anticon.svg{
+  width: 16px !important;
+  height: 16px !important;
+  fill: currentColor !important; /* Ensures icons inherit text color */
+  font-size: 22px !important; /* Ensures icons have a consistent size */
+}
+
+.ant-table-wrapper .ant-table-container{
+  border-start-start-radius: 0px !important; /* Removes border radius for table */
+  border-start-end-radius: 0px !important; /* Removes border radius for table */
+}
+.ant-table-wrapper .ant-table-container .ant-table-content {
+  border-radius: 0px !important; /* Removes border radius for table content */
+}
+.ant-table-wrapper .ant-table.ant-table-bordered >.ant-table-container{
+  border: 0px !important;
+}
+table{
+  border-left: 1px solid #f0f0f0 !important;
+}
+.ant-table-wrapper table {
+  border-radius: 0px !important; /* Removes border radius for table */
+}
+.anticon svg{
+  font-size: large !important; /* Ensures icons have a consistent size */
+  font-weight: bolder !important; /* Makes icons bolder */
+}
+
+.ant-btn-color-link.ant-btn-variant-link svg{
+  color: #40a9ff !important; /* Ensures icons in buttons are white */
+}
+
+
+
+
+
+
+
